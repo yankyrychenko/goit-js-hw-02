@@ -7,10 +7,6 @@ let numbers = [];
 buttonSubmitRef.addEventListener(`click`, () => {
   let input = Number(inputRef.value);
   numbers.push(input);
-
-  if (input !== Number) {
-    console.log("Введено не число");
-  }
 });
 
 buttonExitRef.addEventListener(`click`, () => {
