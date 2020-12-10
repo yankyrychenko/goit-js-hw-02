@@ -6,7 +6,7 @@ let numbers = [];
 
 buttonSubmitRef.addEventListener(`click`, () => {
   let input = Number(inputRef.value);
-  numbers.push(input);
+  isNaN(input) ? console.log("Введено не число") : numbers.push(input);
 });
 
 buttonExitRef.addEventListener(`click`, () => {
