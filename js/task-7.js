@@ -1,25 +1,25 @@
-function filterArray(array) {
-  'use strict';
-  const numbers = [];
-  for(let i = 0; i < array.length; i += 1) {
-    // Write code under this line
-    if ( Number.isFinite(array[i]) ) {
-      numbers.push(array[i])}
+const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
+
+const isLoginValid = function (login) {
+  return login.length >= 4 && login.length <= 16;
+};
+
+const isLoginUnique = function (allLogins, login) {
+  return allLogins.includes(login);
+};
+
+const addLogin = function (allLogins, login) {
+  if (!isLoginValid(login)) {
+    return 'Ошибка! Логин должен быть размером от 4 до 16 символов';
+  } else if (isLoginUnique(allLogins, login)) {
+    return 'Такой логин уже используется!';
+  } else {
+    allLogins.push(login);
+    return 'Логин успешно добавлен!';
   }
-  return numbers;
-}
+};
 
-console.log(filterArray([-2, 0, 2]));
-// [-2, 0, 2]
-
-console.log(filterArray([1, NaN, Infinity]));
-// [1]
-
-console.log(filterArray([0, -0, 100, '100']));
-// [0, 0, 100]
-
-console.log(filterArray([undefined, false, null, [], 1]));
-// [1]
-
-console.log(filterArray([{}, () => {}, 2]));
-// [2]
+console.log(addLogin(logins, 'Ajax'));
+console.log(addLogin(logins, 'robotGoogles'));
+console.log(addLogin(logins, 'Zod'));
+console.log(addLogin(logins, 'jqueryisextremelyfast'));
